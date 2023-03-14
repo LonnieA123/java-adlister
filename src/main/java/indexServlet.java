@@ -12,9 +12,7 @@ public class indexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Ads adDao = DaoFactory.getAdsDao();
-
         List<Ad> ads = adDao.all();
-
         req.setAttribute("ads",ads);
 
         req.getRequestDispatcher("ads/index.jsp").forward(req,resp);
