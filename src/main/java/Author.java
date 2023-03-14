@@ -6,15 +6,9 @@ public class Author {
     protected int id;
     protected String author;
 
-    protected ArrayList<Quote> quotes;
 
-    public ArrayList<Quote> getQuotes() {
-        return quotes;
-    }
 
-    public void setQuotes(ArrayList<Quote> quotes) {
-        this.quotes = quotes;
-    }
+
 
     public int getId() {
         return id;
@@ -36,10 +30,9 @@ public class Author {
 
     }
 
-    public Author(int id, String author, ArrayList<Quote> quotes){
+    public Author(int id, String author){
         this.id = id;
         this.author = author;
-        this.quotes = quotes;
     }
 
 
