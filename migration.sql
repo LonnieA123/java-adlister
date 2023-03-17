@@ -11,6 +11,8 @@ CREATE TABLE users (
     PRIMARY KEY (id)
 );
 
+SELECT * from users;
+
 CREATE TABLE ads (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
