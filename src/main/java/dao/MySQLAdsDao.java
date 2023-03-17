@@ -1,10 +1,15 @@
+package dao;
+
 import com.mysql.jdbc.Driver;
+import dao.Ads;
+import dao.Config;
+import models.Ad;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MySQLAdsDao implements Ads{
+public class MySQLAdsDao implements Ads {
     private Statement statement;
     private Connection connection;
     public MySQLAdsDao(Config config){
@@ -43,17 +48,13 @@ public class MySQLAdsDao implements Ads{
 
     @Override
     public Long insert(Ad ad) throws SQLException {
-
         String query = String.format(
                 "INSERT into ads (user_id, title, description) VALUES ('%d', '%s', '%s')",
                 1,
                 ad.getTitle(),
                 ad.getDescription()
         );
-
-
         statement = connection.createStatement();
         return (long) statement.executeUpdate(query,Statement.RETURN_GENERATED_KEYS);
-
     }
 }
